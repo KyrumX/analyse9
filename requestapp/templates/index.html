@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+{% load browsertags %}
+
+<body>
+
+<h1>User-Agent</h1>
+
+<p>{{ headerinfo }}</p>
+
+<br/>
+
+<table border='1'>
+    <tr>
+        <th>
+            Browser
+        </th>
+        <th>
+            Amount
+        </th>
+    <tr/>
+    {% for e in allobjects %}
+        <tr>
+            <td>{{ e.browser_type }}</td>
+            <td>{{ e.amount }}</td>
+        </tr>
+    {% endfor %}
+</table>
+<br/>
+
+<p>{{ allheader }}</p>
+
+</body>
+</html>
