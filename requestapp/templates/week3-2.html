@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+
+{% load browsertags %}
+
+<body>
+
+<h1>Kleur kiezen svp</h1>
+
+<form method="post" name="colorpick">
+    {% csrf_token %}
+    {{ colorform }}
+    <input type="submit" name="color-form" value="Submit" />
+</form>
+
+</body>
+</html>

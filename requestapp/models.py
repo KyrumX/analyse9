@@ -24,3 +24,17 @@ class Browsers(models.Model):
     @staticmethod
     def get_all_objects():
         return Browsers.objects.all()
+
+class Colors(models.Model):
+    name = models.CharField(max_length=100)
+    address = models.CharField(max_length=100)
+    color = models.CharField(max_length=7)
+
+    @staticmethod
+    def save_color_entry(name, address, color):
+        object = Colors(name=name, address=address, color=color)
+        object.save()
+
+    @staticmethod
+    def get_ten_random():
+        return Colors.objects.all().order_by('?')[:10]

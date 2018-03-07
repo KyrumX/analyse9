@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {color: {{defaultcolor}};}
+    </style>
+
+    {% load browsertags %}
+</head>
+
+<body style="background-color: {{ bgcolor }}">
+
+
+<h1>Bedankt</h1>
+
+<p>
+    Naam: <span style="color: {{ color }}"> {{ name }} </span><br/>
+    Adres: <span style="color: {{ color }}"> {{ address }} </span>
+</p>
+
+<p>
+    <ul>
+        {% for entry in entries %}
+            <li>{{ entry.name }} - {{ entry.address }} - {{ entry.color }}</li>
+        {% endfor %}
+    </ul>
+</p>
+
+</body>
+</html>

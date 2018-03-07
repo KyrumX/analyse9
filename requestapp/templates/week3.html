@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+
+{% load browsertags %}
+
+<body>
+
+<h1>Invullen svp</h1>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" name="details-form" value="Submit"/>
+</form>
+
+</body>
+</html>

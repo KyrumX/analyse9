@@ -20,4 +20,5 @@ from requestapp import views
 
 urlpatterns = [
     url(r'^$', views.index, name='index'),
+    url(r'^week3$', views.Week3Basic.as_view(), name='week3'),
 ]
