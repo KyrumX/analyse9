@@ -1,6 +1,6 @@
 analyse9
 
-Requirements: <br/>
+<b>Requirements:</b> <br/>
 Python 3 <br/>
 Bleach (pip install bleach) <br/>
 Django (pip install django) <br/>
