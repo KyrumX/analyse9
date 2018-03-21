@@ -38,3 +38,6 @@ class Colors(models.Model):
     @staticmethod
     def get_ten_random():
         return Colors.objects.all().order_by('?')[:10]
+
+class Message(models.Model):
+    message = models.TextField(max_length=5000)

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {color: {{defaultcolor}};}
+    </style>
+
+    {% load browsertags %}
+</head>
+
+<body>
+
+<h1>Maak nieuwe entry:</h1>
+
+<p>
+    <form method="post">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" name="message-form" value="Submit"/>
+    </form>
+</p>
+
+</body>
+</html>

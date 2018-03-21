@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 # Create your views here.
 from django.views import View
@@ -6,7 +6,8 @@ from django.views import View
 from requestapp.collection.browser import check_browser_type
 from requestapp.collection.colors import get_matching_color_bg, get_matching_color_text
 from requestapp.collection.forms.week3forms import BasicDetailsForm, ColorForm
-from requestapp.models import Browsers, Colors
+from requestapp.collection.forms.week4forms import MessageForm
+from requestapp.models import Browsers, Colors, Message
 
 
 def index(request):
@@ -55,3 +56,24 @@ class Week3Basic(View):
                 })
             else:
                 return render(request, 'week3-2.html', {'colorform': form})
+
+class Week4(View):
+    def get(self, request):
+        entries = Message.objects.all().order_by('-id')[:10]
+
+        return render(request, 'week4.html', {'entries' : entries})
+
+class Week4Create(View):
+    def get(self, request):
+        form = MessageForm()
+
+        return render(request, 'week4C.html', {'form': form})
+
+    def post(self, request):
+        form = MessageForm(request.POST)
+
+        if form.is_valid():
+            form.save()
+
+            return redirect('/week4')
+        return render(request, 'week4C.html', {'form': form})

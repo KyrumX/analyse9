@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {color: {{defaultcolor}};}
+    </style>
+
+    {% load browsertags %}
+</head>
+
+<body>
+
+<h1>Overview:</h1>
+
+<p>
+    <ul>
+        {% for entry in entries %}
+            <li>{{ entry.message | safe}}</li>
+        {% endfor %}
+    </ul>
+</p>
+
+</body>
+</html>
