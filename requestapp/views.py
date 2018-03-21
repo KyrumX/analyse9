@@ -59,7 +59,12 @@ class Week3Basic(View):
 
 class Week4(View):
     def get(self, request):
-        entries = Message.objects.all().order_by('-id')[:10]
+
+        #   /week4/?search=hello
+        if 'search' in request.GET:
+            entries = Message.objects.filter(message__icontains=request.GET['search']).order_by('-id')[:10]
+        else:
+            entries = Message.objects.all().order_by('-id')[:10]
 
         return render(request, 'week4.html', {'entries' : entries})
 

@@ -20,7 +20,7 @@ from requestapp import views
 
 urlpatterns = [
     url(r'^$', views.index, name='index'),
-    url(r'^week3$', views.Week3Basic.as_view(), name='week3'),
-    url(r'^week4$', views.Week4.as_view(), name='week4overview'),
+    url(r'^week3/$', views.Week3Basic.as_view(), name='week3'),
+    url(r'^week4/$', views.Week4.as_view(), name='week4overview'),
     url(r'^week4/create$', views.Week4Create.as_view(), name='week4create'),
 ]
